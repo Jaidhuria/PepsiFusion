@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.logo-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  animation-name: fadeIn, zoomPulse;
+  animation-duration: 1s, 3s;
+  animation-delay: 3s, 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease-in, ease-in-out;
+}
+
+.pepsi-logo {
+  width: 250px;
+  height: auto;
+  animation: rotateLogo 10s linear infinite, glow 2s ease infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zoomPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+
+  body {
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .photo {
+    width: 180px; /* smaller logo */
+    transform: translateX(100vw);
+    animation: slideInCenter 2s ease-out forwards;
+  }
+
+  .ring {
+    width: 250px;
+    height: 250px;
+    border: 2px solid #004b93;
+    box-shadow:
+      0 0 6px #e32934,
+      0 0 12px #004b93,
+      0 0 24px #fff,
+      0 0 48px #004b93;
+  }
+
+  .logo-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .pepsi-logo {
+    width: 160px;
+    animation: rotateLogo 8s linear infinite, glow 1.5s ease infinite alternate;
+  }
+}
