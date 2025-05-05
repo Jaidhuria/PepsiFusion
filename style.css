@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+}
+
+.photo {
+  background-color: black;
+  width: 300px;
+  height: auto;
+  border: 2px solid transparent;
+  transform: translateX(100vw);
+  animation: slideInCenter 2s ease-out forwards;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+@keyframes slideInCenter {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  border: 4px solid #004b93;
+
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px #e32934,
+    0 0 20px #004b93,
+    0 0 40px #fff,
+    0 0 80px #004b93;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+
+.show-ring {
+  opacity: 1;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 10px #e32934 0 0 20px #ffffff,
+      0 0 40px #e32934 0 0 80px #e32934
+  }
+
+  to {
+    box-shadow:
+      0 0 20px #e32934 0 0 40px #e32934,
+      0 0 80px #fff 0 0 120px rgb(255, 255, 255);
+  }
+}
