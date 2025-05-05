@@ -23,7 +23,7 @@ Built with **HTML**, **CSS**, **Tailwind CSS**, and **JavaScript**, this project
 - **CSS3** – Styling of elements
 - **Tailwind CSS** – Utility-first framework for fast and responsive design
 - **JavaScript** – Interactive functionality and transitions
-- **Animate.css** *(Optional for more animation effects)*
+
 
 ---
 
