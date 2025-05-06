@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>welcome</title>
+  <link rel="stylesheet" href="welcome.css" />
+</head>
+
+<body>
+  <div id="videoContainer">
+    <video id="introVideo" autoplay muted>
+      <source src="/assets/animation video.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="container" id="imageContainer">
+    <div class="half left">
+      <img id="leftImg" src="/assets/left_half.png" alt="Left Half" />
+    </div>
+    <div class="half right">
+      <img id="rightImg" src="/assets/right_half.png" alt="Right Half" />
+    </div>
+    <img src="/assets/animation.png" class="pop-out" id="popOutImg" width="200" alt="Pop Out Image" />
+  </div>
+
+  <div class="getstarted" id="getStartedBtn">
+    <a href="main.html">
+      <button>Get started</button>
+    </a>
+  </div>
+
+  <script src="welcome.js"></script>
+</body>
+
+</html>
