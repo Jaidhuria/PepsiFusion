@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pepsi Sign In</title>
+    <link rel="stylesheet" href="signin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="/assets/logoo.png" alt="Pepsi Logo" class="logo" />
+    </header>
+
+    <main class="container">
+        <img src="/assets/logoo.png" alt="Pepsi Logo Inline" class="inline-logo" />
+        <h1>SIGN IN</h1>
+        <p>Enter your email and password used at registration or your PepsiCo Tasty Rewards credentials to access your
+            account.</p>
+
+        <button class="google-btn">
+            <img src="https://img.icons8.com/color/16/000000/google-logo.png" />
+            SIGN IN WITH GOOGLE
+        </button>
+
+        <div class="divider">OR</div>
+
+        <form>
+            <div class="form-row">
+                <input type="email" placeholder="EMAIL ADDRESS" required />
+                <input type="password" placeholder="PASSWORD" required />
+            </div>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+
+        <div class="links">
+            <p>Forgot your password? Click <a href="#">HERE</a> to reset.</p>
+            <hr />
+            <p>Not yet registered?</p>
+            <a href="#" class="register-btn">REGISTER NOW</a>
+        </div>
+    </main>
+
+    <div class="recaptcha">
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/assets/footerlogo.png" alt="Pepsi Logo" />
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#">Contact Us</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Copyright</a>
+                    <a href="#">Product Facts</a>
+                    <a href="#">Store Locator</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Serve Pepsi</a>
+                    <a href="#">About Our Ads</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/pepsi/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/pepsi?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                        class="fas fa-times"></i></a>
+                <a href="https://www.facebook.com/PepsiUS/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/user/Pepsi"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/notfound"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="#">COOKIE PREFERENCES</a>
+        </div>
+    </footer>
+
+    <script src="signin.js"></script>
+</body>
+
+</html>
