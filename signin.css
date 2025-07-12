@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+.logo {
+    height: 60px;
+    display: block;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.inline-logo {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.google-btn {
+    background-color: #0047FF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.google-btn img {
+    height: 16px;
+}
+
+.divider {
+    margin: 20px auto;
+    font-weight: bold;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 50%;
+}
+
+.divider::before {
+    left: 30%;
+}
+
+.divider::after {
+    right: 30%;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 37, 255);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 600px) {
+    .form-row {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .form-row input {
+        width: 45%;
+    }
+}
+
+input {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.submit-btn {
+    background-color: #0047FF;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.links {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+hr {
+    margin: 20px auto;
+    width: 50%;
+    border: 1px solid #444;
+}
+
+.register-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0047FF;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.recaptcha {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #0029ff;
+    color: white;
+    padding: 40px 20px 20px;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 20px;
+    filter: drop-shadow(10px 10px 15px rgba(255, 255, 255, 0.4));
+
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    font-size: 30px;
+    text-shadow: 2px 2px 5px #fff;
+    filter: contrast(1.5);
+    text-decoration: none;
+    text-decoration: none;
+}
+
+.footer-socials a :hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.footer-bottom a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}

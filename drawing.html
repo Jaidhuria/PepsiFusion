@@ -1,0 +1,624 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>_colour_secrets_14</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9fdfa;
+    color: #155724;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  a {
+    color: #2ea44f;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Navbar */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(237, 253, 246, 0.95);
+    z-index: 30;
+    box-shadow: 0 1px 12px rgba(34, 97, 34, 0.2);
+  }
+  nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+  /* Logo space */
+  nav .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  nav .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: #2ea44f;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9fdfa;
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+    font-style: italic;
+    box-shadow:
+      0 0 6px #81c784,
+      0 0 12px #4caf50;
+  }
+  nav .logo-text {
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    color: #2ea44f;
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  nav ul li {
+    margin-left: 1.6rem;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #155724;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    color: #2ea44f;
+  }
+
+  /* Hero section */
+  #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #f9fdfa 0%, #e8f5e9 100%);
+    color: #155724;
+  }
+
+  #hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #2ea44f;
+    text-shadow:
+      0 0 6px #a2d39c,
+      0 0 15px #81c784;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+    z-index: 2;
+  }
+  #hero p {
+    font-size: 1.25rem;
+    font-style: italic;
+    max-width: 620px;
+    color: #4caf50;
+    text-shadow: 0 0 6px #c8e6c9;
+    z-index: 2;
+  }
+
+  /* Animated paintbrush background canvas */
+  #bgCanvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Section style */
+  section {
+    max-width: 1100px;
+    margin: 100px auto 80px auto;
+    padding: 0 20px;
+    z-index: 10;
+    position: relative;
+  }
+
+  section h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+    color: #2ea44f;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px #81c784;
+    font-style: italic;
+  }
+
+  /* Skills Section */
+  #skills .skill {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #155724;
+  }
+  #skills .skill-name {
+    flex: 0 0 220px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  #skills .skill-bar {
+    flex-grow: 1;
+    background: #d0e8d0;
+    height: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 8px rgba(46, 164, 79, 0.4);
+  }
+  #skills .skill-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #2ea44f, #81c784);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+  }
+  #skills .experience {
+    flex: 0 0 100px;
+    font-size: 0.9rem;
+    color: #4c8c4a;
+    font-style: italic;
+  }
+
+  /* Artworks Section */
+  #artworks .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 25px;
+  }
+  #artworks .gallery img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0 18px rgba(46, 164, 79, 0.4);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #artworks .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(46, 164, 79, 0.8);
+  }
+
+  /* Contact Section */
+  #contact .info {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 1.05rem;
+    color: #2e7d32;
+    line-height: 1.7;
+  }
+  #contact .info strong {
+    color: #2ea44f;
+  }
+
+  /* Commission Section */
+  #commission form {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  #commission label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #81c784;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+  #commission input[type="text"],
+  #commission input[type="email"],
+  #commission textarea {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    box-shadow: inset 0 0 8px rgba(46, 164, 79, 0.5);
+    background: #f0fff3;
+    color: #2e7d32;
+  }
+  #commission input[type="text"]::placeholder,
+  #commission input[type="email"]::placeholder,
+  #commission textarea::placeholder {
+    color: #74a74a;
+  }
+  #commission textarea {
+    min-height: 120px;
+  }
+  #commission button {
+    padding: 15px;
+    background: linear-gradient(90deg, #2ea44f, #81c784);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow:
+      0 0 8px #2ea44f,
+      0 0 15px #81c784;
+    transition: background 0.3s ease;
+  }
+  #commission button:hover {
+    background: linear-gradient(90deg, #1b6e27, #5a9b41);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    nav ul {
+      display: none; /* For simplicity, hide nav on mobile */
+    }
+    #skills .skill-name {
+      flex: 0 0 140px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo-container">
+      <div class="logo-icon">CS</div>
+      <div class="logo-text">ColourSecrets</div>
+    </div>
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#artworks">Artworks</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#commission">Commission</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero">
+  <canvas id="bgCanvas"></canvas>
+  <h1>_colour_secrets_14</h1>
+  <p>Neon green galaxy, forest green, light and dark sage. A mix of fantasy and realism.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skill">
+    <div class="skill-name">Digital Painting</div>
+    <div class="skill-bar">
+      <div class="skill-bar-fill" data-fill="95%"></div>
+    </div>
+    <div class="experience">7 Years</div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Sketching & Drawing</div>
+    <div class="skill-bar">
+      <div class="skill-bar-fill" data-fill="90%"></div>
+    </div>
+    <div class="experience">7 Years</div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Concept Art</div>
+    <div class="skill-bar">
+      <div class="skill-bar-fill" data-fill="85%"></div>
+    </div>
+    <div class="experience">5 Years</div>
+  </div>
+</section>
+
+<section id="artworks">
+  <h2>Artworks</h2>
+  <div class="gallery">
+    <img src="https://i.ibb.co/9Nv43ZZ/p1.jpg" alt="Artwork 1" />
+    <img src="https://i.ibb.co/h7RW5cF/p2.jpg" alt="Artwork 2" />
+    <img src="https://i.ibb.co/hHXrgrc/p3.jpg" alt="Artwork 3" />
+    <img src="https://i.ibb.co/T1yVsBQ/p4.jpg" alt="Artwork 4" />
+    <img src="https://i.ibb.co/Q9m37zv/p5.jpg" alt="Artwork 5" />
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="info">
+    Email: <strong>coloursecrets14@gmail.com</strong> <br />
+    Instagram: <strong><a href="https://www.instagram.com/colour_secrets_14/" target="_blank" rel="noopener">colour_secrets_14</a></strong> <br />
+    YouTube: <strong><a href="https://www.youtube.com/@colour_secrets_14" target="_blank" rel="noopener">colour_secrets_14</a></strong>
+  </div>
+</section>
+
+<section id="commission">
+  <h2>Commission</h2>
+  <form id="commissionForm" novalidate>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email" required />
+
+    <label for="details">Commission Details</label>
+    <textarea id="details" name="details" placeholder="Describe your commission request" required minlength="10"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+<script>
+  // Animate paintbrush strokes in background canvas
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const strokes = [];
+  const colors = ['#2ea44f', '#81c784', '#4caf50', '#a5d6a7'];
+  const maxStrokes = 20;
+
+  class Stroke {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.length = 60 + Math.random() * 80;
+      this.angle = Math.random() * Math.PI * 2;
+      this.speed = 0.1 + Math.random() * 0.2;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.opacity = 0.1 + Math.random() * 0.3;
+      this.width = 10 + Math.random() * 15;
+    }
+    update() {
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed;
+      this.opacity += (Math.random() - 0.5) * 0.01;
+      this.opacity = Math.min(Math.max(this.opacity, 0.05), 0.3);
+      if (this.x < -100) this.x = canvas.width + 100;
+      if (this.x > canvas.width + 100) this.x = -100;
+      if (this.y < -100) this.y = canvas.height + 100;
+      if (this.y > canvas.height + 100) this.y = -100;
+    }
+    draw() {
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = this.width;
+      ctx.globalAlpha = this.opacity;
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x + Math.cos(this.angle) * this.length,
+                 this.y + Math.sin(this.angle) * this.length);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function initStrokes() {
+    strokes.length = 0;
+    for(let i=0; i<maxStrokes; i++) {
+      strokes.push(new Stroke());
+    }
+  }
+  initStrokes();
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for(let stroke of strokes) {
+      stroke.update();
+      stroke.draw();
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Animate skill bars when in viewport
+  const skillFills = document.querySelectorAll('.skill-bar-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        fill.style.width = fill.dataset.fill;
+        observer.unobserve(fill);
+      }
+    });
+  }, {threshold: 0.5});
+
+  skillFills.forEach(fill => {
+    observer.observe(fill);
+  });
+
+  // Form validation
+  const form = document.getElementById('commissionForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const details = form.details.value.trim();
+
+    if(name.length < 2) {
+      alert('Please enter a valid name (at least 2 characters).');
+      form.name.focus();
+      return;
+    }
+    if(!validateEmail(email)) {
+      alert('Please enter a valid email address.');
+      form.email.focus();
+      return;
+    }
+    if(details.length < 10) {
+      alert('Please provide more details (at least 10 characters).');
+      form.details.focus();
+      return;
+    }
+    alert('Thank you for your commission request! I will get back to you soon.');
+    form.reset();
+  });
+
+  function validateEmail(email) {
+    // Simple regex email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commission Form - Your Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f5;
+      margin: 0; padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    /* Logo space */
+    .logo {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: bold;
+      font-size: 28px;
+      color: #007bff;
+      letter-spacing: 1.5px;
+      user-select: none;
+    }
+    /* Form styles */
+    form input, form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: vertical;
+    }
+    form textarea {
+      min-height: 100px;
+    }
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    /* Success message */
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Space -->
+    <div class="logo">Your Company Name</div>
+
+    <!-- Commission Form -->
+    <form id="commissionForm">
+      <input type="text" name="name" placeholder="Your Full Name" required />
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <textarea name="details" placeholder="Describe your commission request" required></textarea>
+      <button type="submit">Send Commission Request</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      Thank you for your commission request! I will get back to you soon.
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your user ID
+    emailjs.init('YOUR_USER_ID'); // <-- Replace YOUR_USER_ID with your actual user ID from EmailJS
+
+    const form = document.getElementById('commissionForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent default form submission
+
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this) // <-- Replace with your service ID and template ID
+        .then(() => {
+          successMessage.style.display = 'block';
+          form.reset();
+        }, (error) => {
+          alert('Oops! Something went wrong. Please try again later.');
+          console.error('EmailJS error:', error);
+        });
+    });
+  </script>
+</body>
+</html>

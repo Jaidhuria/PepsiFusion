@@ -38,3 +38,17 @@ window.onload = function () {
     document.getElementById('getStartedBtn').style.display = 'block';
   }, 4000);
 };
+const video = document.getElementById("introVideo");
+const imageContainer = document.getElementById("imageContainer");
+const getStartedBtn = document.getElementById("getStartedBtn");
+
+// Show can (pop-out) after 2 seconds
+setTimeout(() => {
+  imageContainer.style.display = "block";
+  imageContainer.classList.add("show-pop");
+}, 2000); // 2000 ms = 2 sec
+
+// Show 'Get Started' button when video ends
+video.addEventListener("ended", () => {
+  getStartedBtn.style.display = "block";
+});
